@@ -98,7 +98,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .nav { margin-left: auto; }
 .nav ul { display: flex; gap: 0.25rem; }
 .nav a {
-  display: block; padding: 0.4rem 0.75rem; border-radius: 999px; text-decoration: none;
+  display: block; padding: 0.4rem 0.75rem; border-radius: 999px; text-decoration: none; white-space: nowrap;
   font-size: 0.9375rem; color: var(--ink-2); transition: color .15s, background .15s;
 }
 .nav a:hover { color: var(--ink); background: var(--line); }
@@ -128,7 +128,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .menu-open .bars::before { transform: translateY(5px) rotate(45deg); }
 .menu-open .bars::after { transform: translateY(-5px) rotate(-45deg); }
 
-@media (max-width: 880px) {
+@media (max-width: 1040px) {
   .header-inner { gap: 1rem; }
   .menu-toggle { display: inline-grid; }
   .nav {
@@ -322,7 +322,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .about { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, var(--measure)); gap: clamp(2rem, 7vw, 6rem); padding-block: clamp(3rem, 8vw, 6rem); }
 .about-figure { position: sticky; top: 6rem; align-self: start; display: flex; flex-direction: column; gap: 1.5rem; }
 .about .page-lead { margin-top: 0.75rem; margin-bottom: 2.5rem; }
-@media (max-width: 880px) { .about { grid-template-columns: 1fr; } .about-figure { position: static; max-width: 12rem; } }
+@media (max-width: 880px) { .about { grid-template-columns: 1fr; } .about-figure { position: static; } .about-figure .portrait { max-width: 12rem; } }
 
 /* ── Blogbeitrag ────────────────────────────────────────────── */
 .post-head { padding-top: clamp(2.5rem, 7vw, 5rem); padding-bottom: 2.5rem; }
