@@ -1,19 +1,23 @@
 {{ define "main" }}
-<section class="hero wrap">
-  <div class="hero-text">
-    <p class="eyebrow">{{ site.Params.role }}<br>{{ site.Params.affiliation }}</p>
-    <h1 class="hero-lead">{{ .Params.lead }}</h1>
-    <div class="hero-links">{{ partial "social.html" . }}</div>
+{{ $de := eq site.Language.Lang "de" }}
+{{ $hero := "" }}
+{{ range slice "images/hero.jpg" "images/hero.jpeg" "images/hero.png" "images/hero.webp" }}{{ if and (not $hero) (fileExists (printf "static/%s" .)) }}{{ $hero = . }}{{ end }}{{ end }}
+<section class="hero-photo{{ if not $hero }} is-empty{{ end }}">
+  {{ with $hero }}<img class="hero-img" src="{{ . | relURL }}" alt="{{ site.Params.name }}" style="object-position: {{ site.Params.heroFocus | default "65% 30%" }}">{{ end }}
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="wrap hero-caption">
+    <h1 class="hero-name">{{ site.Params.name }}</h1>
+    <p class="hero-role">{{ site.Params.role }}</p>
+    <p class="hero-aff">{{ site.Params.affiliation }}</p>
   </div>
-  <div class="hero-figure">
-    {{ with site.Params.portrait }}
-      <img class="portrait" src="{{ . | relURL }}" alt="{{ site.Params.name }}" width="560" height="700">
-    {{ else }}
-      <div class="portrait portrait-mono" aria-hidden="true">
-        {{ $parts := split site.Params.name " " }}
-        <span>{{ range $parts }}{{ substr . 0 1 }}{{ end }}</span>
-      </div>
-    {{ end }}
+</section>
+
+<section class="wrap block bio">
+  <div class="rule-head"><span class="rule" aria-hidden="true"></span><h2>{{ cond $de "Über mich" "About me" }}</h2></div>
+  <div class="bio-body">
+    {{ with .Params.lead }}<p class="bio-lead">{{ . }}</p>{{ end }}
+    <div class="bio-text">{{ .Content }}</div>
+    <div class="bio-links">{{ partial "social.html" . }}</div>
   </div>
 </section>
 
