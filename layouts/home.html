@@ -10,12 +10,27 @@
     <div class="intro-bio">{{ .Content }}</div>
     <div class="intro-links">{{ partial "social.html" . }}</div>
   </div>
-  {{ with $hero }}<img class="intro-img" src="{{ . | relURL }}" alt="{{ site.Params.name }}">{{ end }}
+  {{ $focus := .Params.focus }}
+  {{ $r := site.GetPage (cond $de "/forschung" "/research") }}
+  {{ if $hero }}
+  <div class="intro-side">
+    <div class="intro-photo"><img class="intro-img" src="{{ $hero | relURL }}" alt="{{ site.Params.name }}"></div>
+    {{ with $focus }}
+    <div class="intro-focus">
+      {{ partial "section-head.html" (dict "title" (i18n "researchFocus") "link" $r.RelPermalink "label" (i18n "allProjects")) }}
+      <ol class="focus-row">
+        {{ range $i, $f := . }}
+        <li><span class="focus-num">{{ printf "%02d" (add $i 1) }}</span><h3>{{ $f.title }}</h3><p>{{ $f.text }}</p></li>
+        {{ end }}
+      </ol>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
 </section>
 
-{{ with .Params.focus }}
+{{ if not $hero }}{{ with $focus }}
 <section class="wrap block">
-  {{ $r := site.GetPage (cond (eq site.Language.Lang "de") "/forschung" "/research") }}
   {{ partial "section-head.html" (dict "title" (i18n "researchFocus") "link" $r.RelPermalink "label" (i18n "allProjects")) }}
   <ol class="focus-grid">
     {{ range $i, $f := . }}
@@ -27,7 +42,7 @@
     {{ end }}
   </ol>
 </section>
-{{ end }}
+{{ end }}{{ end }}
 
 <section class="wrap block split">
   <div>
