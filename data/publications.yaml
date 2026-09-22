@@ -1,65 +1,694 @@
 # ─────────────────────────────────────────────────────────────
 #  PUBLIKATIONEN
-#  Neue Einträge einfach oben ergänzen (Reihenfolge ist egal –
-#  die Seite sortiert automatisch nach Jahr).
+#  Neue Einträge einfach oben ergänzen (die Seite sortiert
+#  automatisch nach Jahr). Einrückung: zwei Leerzeichen.
 #
 #  type:      article | book | chapter | other
+#  venue:     Zeitschrift bzw. Sammelband/Verlag
+#  volume:    Jahrgang(Heft), Seiten – z. B. "41(3), 479–497"
+#  doi / url: optional (DOI ohne https://doi.org/)
 #  selected:  true  → erscheint auch auf der Startseite
-#  doi / url / pdf: optional. PDFs in static/pdf/ ablegen und
-#                   als "/pdf/dateiname.pdf" eintragen.
-#
-#  HINWEIS: Die folgenden Einträge sind PLATZHALTER und
-#  müssen durch echte Publikationen ersetzt werden.
+#  openaccess: true → Open-Access-Kennzeichnung
 # ─────────────────────────────────────────────────────────────
 
 - type: article
   year: 2026
-  authors: "Muster, A., Rothmund, T., & Beispiel, B."
-  title: "[Beispiel] Titel eines aktuellen Zeitschriftenartikels über Vertrauen in Medien"
-  venue: "Journal of Example Studies"
-  volume: "12(3)"
-  pages: "101–120"
-  doi: "10.0000/beispiel.2026.001"
+  authors: Bojarskich, V., Yucel, M., Hahn, L., & Rothmund, T.
+  title: Ideological differences in harm-based moral judgments of toxic speech
+  venue: Political Psychology
+  volume: in press
+  selected: true
+
+- type: article
+  year: 2026
+  authors: Stolp, A., Finn, C., Ziemer, C. T., Thiel, C., & Rothmund, T.
+  title: Ideologically biased evaluation of evidence – A signal-detection approach to measure individual differences
+  venue: PLoS ONE
+  volume: 21(9), e0357011
+  doi: 10.1371/journal.pone.0357011
   openaccess: true
   selected: true
+
+- type: article
+  year: 2026
+  authors: Ahrens, E., Bojarskich, V., & Rothmund, T.
+  title: 'Towards a typology of online users in response to incivility: A latent profile analysis across six countries'
+  venue: 'Cyberpsychology: Journal of Psychosocial Research on Cyberspace'
+  volume: 20(3), Article 1
+  doi: 10.5817/CP2026-3-1
+  openaccess: true
+  selected: true
+
+- type: article
+  year: 2026
+  authors: Fischer, H., Bojarskich, V., Ziemer, C.-T., Louis, W., & Rothmund, T.
+  title: 'Zone-flooding, public confusion, and Signal Detection Theory: A theoretical framework and registered report'
+  venue: Political Psychology
+  volume: 27(2)
+  doi: 10.1111/pops.70076
+
+- type: article
+  year: 2026
+  authors: Ziemer, C. T., Finn, C., & Rothmund, T.
+  title: 'From bias to balance: Testing the effect of feedback on ideological bias expression. A registered report'
+  venue: Political Psychology
+  volume: 47(1), e13070
+  doi: 10.1111/pops.13070
 
 - type: article
   year: 2025
-  authors: "Rothmund, T., & Muster, A."
-  title: "[Beispiel] Ein zweiter Artikel zu politischer Kommunikation und Desinformation"
-  venue: "Zeitschrift für Beispielpsychologie"
-  volume: "56(1)"
-  pages: "1–18"
-  doi: "10.0000/beispiel.2025.014"
-  selected: true
+  authors: Grosche, C., & Rothmund, T.
+  title: 'Yesterday, all our troubles seemed so far away: Measuring nostalgic deprivation as a predictor for radical-right support – Empirical evidence from Germany and the US'
+  venue: Political Psychology
+  doi: 10.1111/pops.70057
 
-- type: book
-  year: 2024
-  authors: "Rothmund, T. (Hrsg.)"
-  title: "[Beispiel] Titel eines Sammelbandes"
-  venue: "Beispielverlag, Berlin"
-  url: "https://example.org"
+- type: article
+  year: 2025
+  authors: Bojarskich, V., Grosche, C., Ziemer, C.-T., & Rothmund, T.
+  title: Solidarity with Ukraine? How fear- and moral-based motivations explain the psychological tug-of-war in the German public
+  venue: 'Peace and Conflict: Journal of Peace Psychology'
+  volume: Advance online publication
+  doi: 10.1037/pac0000813
 
 - type: chapter
   year: 2024
-  authors: "Rothmund, T., & Beispiel, B."
-  title: "[Beispiel] Ein Buchkapitel über Medienwirkungen"
-  venue: "In C. Herausgeber (Hrsg.), Handbuch der Beispielforschung (S. 45–67). Beispielverlag."
+  authors: Rothmund, T., & Walther, E.
+  title: Psychologie der Rechtsradikalisierung – Konzepte und Grundlagen
+  venue: In T. Rothmund & E. Walther (Hrsg.), Psychologie der Rechtsradikalisierung – Theorien, Perspektiven, Prävention (S. 19–31). Kohlhammer
+  url: https://shop.kohlhammer.de/psychologie-der-rechtsradikalisierung-43997.html
+
+- type: chapter
+  year: 2024
+  authors: Rothmund, T., & Walther, E.
+  title: Ein psychologisches Rahmenmodell der Radikalisierung
+  venue: In T. Rothmund & E. Walther (Hrsg.), Psychologie der Rechtsradikalisierung – Theorien, Perspektiven, Prävention (S. 32–46). Kohlhammer
+  url: https://shop.kohlhammer.de/psychologie-der-rechtsradikalisierung-43997.html
+
+- type: article
+  year: 2024
+  authors: Vandebosch, H., & Rothmund, T.
+  title: 'Online hate: A European communication perspective'
+  venue: Communications
+  volume: 49(3), 371–377
+  doi: 10.1515/commun-2024-0097
+
+- type: article
+  year: 2024
+  authors: Hauptvogel, D., Kuhlmann, J., Richard, I., Emanuely, C., Schreckenberg, D., Quehl, J., … & Bartels, S.
+  title: 'Fairness perspectives of airport residents: A qualitative approach'
+  venue: Transportation Research Interdisciplinary Perspectives
+  volume: 27, 101221
+  doi: 10.1016/j.trip.2024.101221
+
+- type: article
+  year: 2024
+  authors: Ziemer, C. T., Schmid, P., Betsch, C., & Rothmund, T.
+  title: Identity is key, but inoculation helps – How to empower Germans of Russian descent against pro-Kremlin disinformation
+  venue: advances.in/psychology
+  volume: 2, e628359
+  doi: 10.56296/aip00015
+  openaccess: true
+
+- type: article
+  year: 2024
+  authors: Dellagiacoma, L., Geschke, D., & Rothmund, T.
+  title: 'Ideological attitudes predicting online hate speech: The differential effects of right-wing authoritarianism and social dominance orientation'
+  venue: Frontiers in Social Psychology
+  volume: 2, 1389437
+  doi: 10.3389/frsps.2024.1389437
+  openaccess: true
+
+- type: other
+  year: 2024
+  authors: Streitberger, J., Ahrens, E., Franke, H., Kleinschmitt, A., Koch, M., Preißler, A., … & Rothmund, T.
+  title: Gefährdungen der demokratischen Kultur in Thüringen
+  venue: KomRex – Zentrum für Rechtsextremismusforschung, Demokratiebildung und gesellschaftliche Integration, Universität Jena
+  url: https://www.komrex.uni-jena.de/
+
+- type: article
+  year: 2024
+  authors: Ziemer, C.-T., & Rothmund, T.
+  title: 'Psychological underpinnings of misinformation countermeasures: A systematic scoping review'
+  venue: 'Journal of Media Psychology: Theories, Methods, and Applications'
+  volume: Advance online publication
+  doi: 10.1027/1864-1105/a000407
+
+- type: chapter
+  year: 2023
+  authors: Rothmund, T., & Bojarskich, V.
+  title: Verschwörungsglauben im politischen Denken und Handeln
+  venue: In R. Imhoff (Hrsg.), Die Psychologie der Verschwörungstheorien (S. 67–83). Hogrefe
+  url: https://www.hogrefe.com/de/shop/die-psychologie-der-verschwoerungstheorien-97657.html
+
+- type: other
+  year: 2023
+  authors: Hauptvogel, D., Rothmund, T., Schreckenberg, D., Schmitz, M. T., & Bartels, S.
+  title: Development and validation of the Aircraft Noise related Fairness Inventory (fAIR-In)
+  venue: In INTER-NOISE and NOISE-CON Congress and Conference Proceedings (Vol. 268, No. 7, pp. 1833–1837). Institute of Noise Control Engineering
+  doi: 10.3397/IN_2023_0275
+
+- type: other
+  year: 2023
+  authors: Rothmund, T.
+  title: Konkurrierende Bedrohungsdebatten in Krisenzeiten – Eine sozialpsychologische Perspektive
+  venue: Wissenschaft und Frieden (W&F), 2023/1
+  url: https://wissenschaft-und-frieden.de/artikel/konkurrierende-bedrohungsdebatten-in-krisenzeiten/
 
 - type: article
   year: 2023
-  authors: "Beispiel, B., Muster, A., & Rothmund, T."
-  title: "[Beispiel] Experimentelle Studie mit vorregistrierter Replikation"
-  venue: "Example Psychology Review"
-  volume: "8"
-  pages: "e1234"
-  doi: "10.0000/beispiel.2023.077"
+  authors: Hauptvogel, D., Schreckenberg, D., Rothmund, T., Schmitz, M. T., & Bartels, S.
+  title: Being a fair neighbor – Towards a psychometric inventory to assess fairness-related perceptions of airports by residents – Development and validation of the Aircraft Noise-Related Fairness Inventory (fAIR-In)
+  venue: International Journal of Environmental Research and Public Health
+  volume: 20(12), 6113
+  doi: 10.3390/ijerph20126113
   openaccess: true
-  selected: true
+
+- type: article
+  year: 2023
+  authors: Azevedo, F., Pavlović, T., Rêgo, G. G., Ay, F. C., Gjoneska, B., Etienne, T. W., … & Huang, G.
+  title: Social and moral psychology of COVID-19 across 69 countries
+  venue: Scientific Data
+  volume: 10(1), 272
+  doi: 10.1038/s41597-023-02080-8
+  openaccess: true
+
+- type: chapter
+  year: 2022
+  authors: Rothmund, T., & Bromme, L.
+  title: Politische Psychologie
+  venue: 'In A. Schütz, M. Brand, & S. Steins-Löber (Hrsg.), Psychologie: Eine Einführung in ihre Grundlagen und Anwendungsfelder (S. 444–454). Kohlhammer'
+
+- type: article
+  year: 2022
+  authors: Pavlović, T., Azevedo, F., De, K., Riaño-Moreno, J. C., Maglić, M., Gkinopoulos, T., … & Keudel, O.
+  title: Predicting attitudinal and behavioral responses to COVID-19 pandemic using machine learning
+  venue: PNAS Nexus
+  volume: 1(3)
+  doi: 10.1093/pnasnexus/pgac093
+  openaccess: true
+
+- type: chapter
+  year: 2022
+  authors: Rothmund, T., & Ziemer, C. T.
+  title: Zur Psychologie der Unterstützung rechtspopulistischer Parteien und Politiker*innen
+  venue: 'In A. Beelmann & D. Michelsen (Hrsg.), Rechtsextremismus, Demokratiebildung, gesellschaftliche Integration: Interdisziplinäre Debatten und Forschungsbilanzen (S. 103–125). Springer Fachmedien Wiesbaden'
+
+- type: article
+  year: 2022
+  authors: Rothmund, T., Farkhari, F., Ziemer, C. T., & Azevedo, F.
+  title: Psychological underpinnings of pandemic denial – Patterns of disagreement with scientific experts in the German public during the COVID-19 pandemic
+  venue: Public Understanding of Science
+  volume: 31(4), 437–457
+  doi: 10.1177/09636625211068131
+
+- type: article
+  year: 2021
+  authors: Imhoff, R., Alexopoulos, T., Cichocka, A., Degner, J., Dixon, J., Easterbrook, M. J., … & Smith, J.
+  title: Thoroughly thought through? Experimenting with Registered Reports
+  venue: European Journal of Social Psychology
+  volume: 51(7), 1035–1037
+  doi: 10.1002/ejsp.2829
+
+- type: article
+  year: 2022
+  authors: Van Bavel, J. J., Cichocka, A., Capraro, V., Sjåstad, H., Nezlek, J. B., Pavlović, T., … & Jørgensen, F. J.
+  title: National identity predicts public health support during a global pandemic
+  venue: Nature Communications
+  volume: 13(1), 1–14
+  doi: 10.1038/s41467-021-27668-9
+  openaccess: true
+
+- type: article
+  year: 2022
+  authors: Bromme, L., Rothmund, T., & Azevedo, F.
+  title: Mapping political trust and involvement in the personality space – A meta-analysis and new evidence
+  venue: Journal of Personality
+  doi: 10.1111/jopy.12700
+
+- type: article
+  year: 2021
+  authors: Burghartswieser, D., & Rothmund, T.
+  title: Conservative bias, selective political exposure and truly false consensus beliefs in political communication about the ‘refugee crisis’ in Germany
+  venue: PLoS ONE
+  volume: 16(11), e0259445
+  doi: 10.1371/journal.pone.0259445
+  openaccess: true
+
+- type: article
+  year: 2021
+  authors: Hauptvogel, D., Bartels, S., Schreckenberg, D., & Rothmund, T.
+  title: Aircraft noise distribution as a fairness dilemma – A review of aircraft noise through the lens of social justice research
+  venue: International Journal of Environmental Research and Public Health
+  volume: 18(14), 7399
+  doi: 10.3390/ijerph18147399
+  openaccess: true
+
+- type: chapter
+  year: 2021
+  authors: Ziemer, C.-T., Farkhari, F., & Rothmund, T.
+  title: Was zeichnet Pandemieleugner*innen aus? – Eine Analyse politischer Einstellungen, kognitiver Stile und Mediennutzung
+  venue: In Institut für Demokratie und Zivilgesellschaft (Hrsg.), Wissen schafft Demokratie. Schwerpunkt Demokratiegefährdungen in der Coronakrise (Band 9, S. 28–41)
+  url: https://www.idz-jena.de/fileadmin/user_upload/PDFS_WsD_9/WsD_09_Beitrag_Carolin-Theresa_Ziemer_et_al..pdf
+
+- type: article
+  year: 2021
+  authors: Bromme, L., & Rothmund, T.
+  title: Trust and involvement as higher-order factors of general attitudes towards politics. Testing a structural model across 26 democracies
+  venue: Political Psychology
+  volume: 42(6), 1071–1090
+  doi: 10.1111/pops.1273
+
+- type: article
+  year: 2020
+  authors: Bromme, L., Rothmund, T., & Caprara, G. V.
+  title: A translation and validation of the Perceived Political Self-Efficacy (P-PSE) Scale for the use in German samples
+  venue: Measurement Instruments for the Social Sciences
+  volume: 2(1)
+  doi: 10.1186/s42409-020-00013-4
+  openaccess: true
+
+- type: article
+  year: 2020
+  authors: Rothmund, T., Bromme, L., & Azevedo, F.
+  title: How justice sensitivity can foster and impair support for populist radical right parties and politicians in the US and in Germany
+  venue: Political Psychology
+  volume: 41(3), 479–497
+  doi: 10.1111/pops.12632
+
+- type: article
+  year: 2020
+  authors: Geissner, E., Knechtl, L. M., Baumert, A., Rothmund, T., & Schmitt, M.
+  title: Guilt experience in patients with obsessive-compulsive disorder
+  venue: Verhaltenstherapie
+  volume: 1–8
+  doi: 10.1159/000503907
+
+- type: chapter
+  year: 2020
+  authors: Rothmund, T.
+  title: Personality and political affiliation
+  venue: In V. Zeigler-Hill & T. K. Shackelford (Eds.), Encyclopedia of Personality and Individual Differences (pp. 3675–3678). Springer International Publishing
+  doi: 10.1007/978-3-319-28099-8_716-1
+
+- type: article
+  year: 2019
+  authors: Womick, J., Rothmund, T., Azevedo, F., King, L. A., & Jost, J. T.
+  title: Group-based dominance and authoritarian aggression predict support for Donald Trump in the 2016 U.S. presidential election
+  venue: Social Psychological and Personality Science
+  volume: 10(5), 643–652
+  doi: 10.1177/1948550618778290
+
+- type: article
+  year: 2019
+  authors: Halmburger, A., Baumert, A., & Rothmund, T.
+  title: Seen one, seen ’em all? Do reports about law violations of a single politician impair the perceived trustworthiness of politicians in general and of the political system?
+  venue: Journal of Social and Political Psychology
+  volume: 7(1)
+  doi: 10.5964/jspp.v7i1.933
+  openaccess: true
+
+- type: chapter
+  year: 2018
+  authors: Halmburger, A., Rothmund, T., Baumert, A., & Maier, J.
+  title: Trust in politicians. Understanding and measuring the perceived trustworthiness of specific politicians and politicians in general as multidimensional constructs
+  venue: In E. Bytzek, U. Rosar, & M. Steinbrecher (Hrsg.), Wahrnehmung – Persönlichkeit – Einstellungen. Psychologische Theorien und Methoden in der Wahl- und Einstellungsforschung. Springer VS
+  doi: 10.1007/978-3-658-21216-2_8
+
+- type: article
+  year: 2019
+  authors: Azevedo, F., Jost, J. T., Rothmund, T., & Sterling, J.
+  title: 'Neoliberal ideology and the justification of inequality in capitalist societies: Why social and economic dimensions of ideology are intertwined'
+  venue: Journal of Social Issues
+  volume: 75(1), 49–88
+  doi: 10.1111/josi.12310
 
 - type: other
-  year: 2022
-  authors: "Rothmund, T."
-  title: "[Beispiel] Policy Brief oder Gutachten"
-  venue: "Beispielinstitut, Jena"
-  pdf: ""
+  year: 2018
+  authors: Stier, S., Bleier, A., Bonart, M., Mörsheim, F., Bohlouli, M., Nizhegorodov, M., Posch, L., Maier, J., Rothmund, T., & Staab, S.
+  title: 'Systematically monitoring social media: The case of the German Federal Election 2017'
+  venue: GESIS Papers 2018|04
+  url: https://nbn-resolving.de/urn:nbn:de:0168-ssoar-56149-4
+
+- type: chapter
+  year: 2018
+  authors: Rothmund, T., Elson, M., Appel, M., Kneer, J., Pfetsch, J., Schneider, F., & Zahn, C.
+  title: Does exposure to violence in entertainment media make people aggressive?
+  venue: In E. Sørensen (Ed.), Cultures of Computer Game Concerns. The Child Across Families, Law, Science and Industry (pp. 267–282). transcript
+  url: https://www.transcript-verlag.de/978-3-8376-3934-6/cultures-of-computer-game-concerns/
+
+- type: chapter
+  year: 2018
+  authors: Sørensen, E., Elson, M., & Rothmund, T.
+  title: Psychology's multiple concerns about research on the effects of media violence
+  venue: In E. Sørensen (Ed.), Cultures of Computer Game Concerns. The Child Across Families, Law, Science and Industry (pp. 283–294). transcript
+  url: https://www.transcript-verlag.de/978-3-8376-3934-6/cultures-of-computer-game-concerns/
+
+- type: article
+  year: 2018
+  authors: Rothmund, T., Klimmt, C., & Gollwitzer, M.
+  title: Low temporal stability of excessive video game use in German adolescents
+  venue: Journal of Media Psychology
+  volume: 30, 53–65
+  doi: 10.1027/1864-1105/a000177
+
+- type: article
+  year: 2018
+  authors: Imhoff, R., Smith, J., van Zomeren, M., Amiot, C., Andreouli, E., Bilewicz, M., … & Vaes, J.
+  title: Opening up to openness
+  venue: European Journal of Social Psychology
+  volume: 48(1), 1–3
+
+- type: article
+  year: 2017
+  authors: Azevedo, F., Jost, J. T., & Rothmund, T.
+  title: 'Making America great again: System justification in the US presidential election of 2016'
+  venue: Translational Issues in Psychological Science
+  volume: 3(3), 231–240
+  doi: 10.1037/tps0000122
+
+- type: chapter
+  year: 2017
+  authors: Rothmund, T.
+  title: Personality and political affiliation
+  venue: In V. Zeigler-Hill & T. K. Shackelford (Eds.), Encyclopedia of Personality and Individual Differences. Advance online publication
+  doi: 10.1007/978-3-319-28099-8_716-1
+
+- type: article
+  year: 2017
+  authors: Nauroth, P., Gollwitzer, M., Kozuchowski, H., Bender, J., & Rothmund, T.
+  title: The effects of social identity threat and social identity affirmation on laypersons’ perception of scientists
+  venue: Public Understanding of Science
+  volume: 26(7), 754–770
+  doi: 10.1177/0963662516631289
+
+- type: article
+  year: 2017
+  authors: Baumert, A., Halmburger, A., Rothmund, T., & Schemer, C.
+  title: Every-day dynamics in generalized social and political trust
+  venue: Journal of Research in Personality
+  volume: 69, 44–54
+  doi: 10.1016/j.jrp.2016.04.006
+
+- type: article
+  year: 2017
+  authors: Rothmund, T., Gollwitzer, M., Nauroth, P., & Bender, J.
+  title: Motivierte Wissenschaftsrezeption
+  venue: Psychologische Rundschau
+  volume: 68, 193–197
+  doi: 10.1026/0033-3042/a000364
+
+- type: article
+  year: 2017
+  authors: Rothmund, T., Stavrova, O., & Schlösser, T.
+  title: Justice concerns can feed nationalistic concerns and impede solidarity in the Euro crisis – How victim sensitivity translates into political attitudes
+  venue: Social Justice Research
+  volume: 30(1), 48–71
+  doi: 10.1007/s11211-017-0280-7
+
+- type: article
+  year: 2016
+  authors: Bender, J., Rothmund, T., Nauroth, P., & Gollwitzer, M.
+  title: How moral threat shapes laypersons’ engagement with science
+  venue: Personality and Social Psychology Bulletin
+  volume: 42(12), 1723–1735
+  doi: 10.1177/0146167216671518
+
+- type: article
+  year: 2016
+  authors: Yudkin, D., Rothmund, T., Twardawski, M., Thalla, N., & Van Bavel, J. J.
+  title: Reflexive intergroup bias in third-party punishment
+  venue: 'Journal of Experimental Psychology: General'
+  volume: 145, 1448–1459
+  doi: 10.1037/xge0000190
+
+- type: article
+  year: 2016
+  authors: Rothmund, T., & Otto, L.
+  title: The changing role of media use in political participation
+  venue: Journal of Media Psychology
+  volume: 28, 97–99
+  doi: 10.1027/1864-1105/a000204
+
+- type: article
+  year: 2016
+  authors: Bondü, R., Rothmund, T., & Gollwitzer, M.
+  title: Mutual long-term effects of school bullying, victimization, and justice sensitivity in adolescents
+  venue: Journal of Adolescence
+  volume: 48, 68–72
+  doi: 10.1016/j.adolescence.2016.01.007
+
+- type: chapter
+  year: 2016
+  authors: Klimmt, C., Sowka, A., Sjöström, A., Ditrich, L., Gollwitzer, M., & Rothmund, T.
+  title: 'Wie Journalisten mit sozialwissenschaftlicher Evidenz umgehen: Erkenntnisse aus einem Workshop'
+  venue: In G. Ruhrmann, S. H. Kessler & L. Guenther (Hrsg.), Wissenschaftskommunikation zwischen Risiko und (Un-)Sicherheit (S. 75–90). Halem
+  url: https://www.halem-verlag.de/wissenschaftskommunikation-zwischen-risiko-und-un-sicherheit/
+
+- type: chapter
+  year: 2016
+  authors: Rothmund, T., Becker, J., & Jost, J. T.
+  title: The psychology of social justice in political thought and action
+  venue: In C. Sabbagh & M. Schmitt (Eds.), Handbook of Social Justice Theory and Research (pp. 275–293). Springer
+  doi: 10.1007/978-1-4939-3216-0
+
+- type: chapter
+  year: 2015
+  authors: Rothmund, T., & Arzheimer, K.
+  title: Politische Ideologien
+  venue: In S. Zmerli & O. Feldman (Hrsg.), Politische Psychologie. Handbuch für Studium und Wissenschaft (S. 123–143). Nomos
+  url: https://www.nomos-shop.de/Zmerli-Feldman-Politische-Psychologie/productview.aspx?product=21818
+
+- type: article
+  year: 2015
+  authors: Rothmund, T., Bender, J., Nauroth, P., & Gollwitzer, M.
+  title: Public concerns about violent video games are moral concerns – How moral threat can make pacifists susceptible to scientific and political claims against violent video games
+  venue: European Journal of Social Psychology
+  volume: 45(6), 769–783
+  doi: 10.1002/ejsp.2125
+
+- type: article
+  year: 2015
+  authors: Kehr, F., Rothmund, T., Füllgraf, W., & Gollwitzer, M.
+  title: Prädiktoren sicherheitsrelevanten Verhaltens bei jugendlichen Computernutzern
+  venue: Datenschutz und Datensicherheit
+  volume: 39(5), 303–307
+  doi: 10.1007/s11623-015-0417-5
+
+- type: article
+  year: 2015
+  authors: Grimm, R., Maier, M., & Rothmund, T.
+  title: Vertrauen. Ein interdisziplinäres Referenzmodell
+  venue: Datenschutz und Datensicherheit
+  volume: 39(5), 283–288
+  doi: 10.1007/s11623-015-0414-8
+
+- type: article
+  year: 2015
+  authors: Nauroth, P., Gollwitzer, M., Bender, J., & Rothmund, T.
+  title: Social identity threat motivates science-discrediting online comments
+  venue: PLoS ONE
+  volume: 10(2), e0117476
+  doi: 10.1371/journal.pone.0117476
+  openaccess: true
+
+- type: article
+  year: 2015
+  authors: Rothmund, T., Gollwitzer, M., Bender, J., & Klimmt, C.
+  title: Short- and long-term effects of video game violence on interpersonal trust
+  venue: Media Psychology
+  volume: 18(1), 106–133
+  doi: 10.1080/15213269.2013.841526
+
+- type: article
+  year: 2014
+  authors: Maier, M., Rothmund, T., Retzbach, A., Otto, L., & Besley, J.
+  title: Informal learning through science media usage
+  venue: Educational Psychologist
+  volume: 49(2), 86–103
+  doi: 10.1080/00461520.2014.916215
+
+- type: article
+  year: 2014
+  authors: Nauroth, P., Gollwitzer, M., Bender, J., & Rothmund, T.
+  title: Gamers against science. The case of the violent video games debate
+  venue: European Journal of Social Psychology
+  volume: 44(2), 104–116
+  doi: 10.1002/ejsp.1998
+
+- type: article
+  year: 2014
+  authors: Gollwitzer, M., Rothmund, T., Klimmt, C., Nauroth, P., & Bender, J.
+  title: 'Gründe und Konsequenzen einer verzerrten Darstellung und Wahrnehmung sozialwissenschaftlicher Forschungsbefunde: Das Beispiel der Killerspiele-Debatte'
+  venue: Zeitschrift für Erziehungswissenschaft
+  volume: 17(4), 101–117
+  url: https://www.springer.com/de/book/9783658057961
+
+- type: article
+  year: 2014
+  authors: Rothmund, T., Baumert, A., & Zinkernagel, A.
+  title: The German “Wutbürger” – How justice sensitivity accounts for individual differences in political engagement
+  venue: Social Justice Research
+  volume: 27(1), 24–44
+  doi: 10.1007/s11211-014-0202-x
+
+- type: chapter
+  year: 2014
+  authors: Nauroth, P., Bender, J., Rothmund, T., & Gollwitzer, M.
+  title: Die „Killerspiel“-Diskussion. Wie die Forschung zur Wirkung gewalthaltiger Medien in der Öffentlichkeit wahrgenommen wird
+  venue: In T. Porsch & S. Pieschl (Hrsg.), Neue Medien und deren Schatten. Mediennutzung, Medienwirkung und Medienkompetenz. Hogrefe
+  url: https://www.hogrefe.de/shop/neue-medien-und-deren-schatten-66434.html
+
+- type: article
+  year: 2014
+  authors: Rothmund, T., & Baumert, A.
+  title: Shame on me – Implicit assessment of negative moral self-evaluation in shame-proneness
+  venue: Social Psychological and Personality Science
+  volume: 5(2), 195–202
+  doi: 10.1177/1948550613488950
+
+- type: other
+  year: 2013
+  authors: Rothmund, T., & Imhoff, R.
+  title: Politische Psychologie – Politisches Handeln verstehen und gestalten. Editorial zum Themenheft „Politische Psychologie“
+  venue: In-Mind, 9/2013
+  url: http://de.in-mind.org/
+
+- type: article
+  year: 2013
+  authors: Bender, J., Rothmund, T., & Gollwitzer, M.
+  title: 'Biased estimation of violent video game effects on aggression: Contributing factors and boundary conditions'
+  venue: Societies
+  volume: 3, 383–398
+
+- type: article
+  year: 2013
+  authors: Schmitt, M., Gollwitzer, M., Baumert, A., Blum, G., Gschwendner, T., Hofmann, W., & Rothmund, T.
+  title: Proposal of a nonlinear interaction of person and situation (NIPS) model
+  venue: Frontiers in Psychology
+  volume: 4, 499
+
+- type: article
+  year: 2013
+  authors: Gollwitzer, M., Rothmund, T., & Süßenbach, P.
+  title: 'The Sensitivity to Mean Intentions (SeMI) model: Basic assumptions, recent findings, and potential avenues for future research'
+  venue: Social and Personality Psychology Compass
+  volume: 7, 415–426
+
+- type: article
+  year: 2013
+  authors: Sjöström, A., Sowka, A., Gollwitzer, M., Klimmt, C., & Rothmund, T.
+  title: 'Exploring audience judgments of social science in media discourse: The case of the violent video games debate'
+  venue: Journal of Media Psychology
+  volume: 25(1), 27–38
+
+- type: chapter
+  year: 2013
+  authors: Baumert, A., Rothmund, T., Thomas, N., Gollwitzer, M., & Schmitt, M.
+  title: Justice as a moral motive – Belief in a just world and justice sensitivity as potential indicators of the justice motive
+  venue: 'In K. Heinrichs, F. Oser & T. Lovat (Eds.), Handbook of Moral Motivation: Theories, Models, Applications (pp. 159–179). Sense Publishers'
+
+- type: chapter
+  year: 2013
+  authors: Rothmund, T., Gollwitzer, M., Baumert, A., & Schmitt, M.
+  title: The psychological functions of justice in mass media
+  venue: In R. Tamborini (Ed.), Media and the Moral Mind (pp. 170–197). Routledge
+
+- type: article
+  year: 2012
+  authors: Halmburger, A., Rothmund, T., Schulte, M., & Baumert, A.
+  title: 'Psychological reactions to political scandals: Effects on emotions, trust and the need for punishment'
+  venue: Politische Psychologie – Journal of Political Psychology
+  volume: 12-02, 30–51
+
+- type: article
+  year: 2012
+  authors: Rothmund, T., Baumert, A., & Schmitt, M.
+  title: Can network models represent personality structures and processes better than trait models do?
+  venue: European Journal of Personality
+  volume: 26, 444–445
+
+- type: article
+  year: 2012
+  authors: Gollwitzer, M., Rothmund, T., Alt, B., & Jekel, M.
+  title: Victim sensitivity and the accuracy of social judgment
+  venue: Personality and Social Psychology Bulletin
+  volume: 38(8), 975–984
+
+- type: chapter
+  year: 2012
+  authors: Rothmund, T., & Gollwitzer, M.
+  title: Digitale Spiele und prosoziales Verhalten
+  venue: In L. Reinecke & S. Trepte (Hrsg.), Unterhaltung in Neuen Medien (S. 326–343). Halem
+
+- type: article
+  year: 2011
+  authors: Rothmund, T., Mojzisch, A., & Schulz-Hardt, S.
+  title: Effects of consensus information and task demonstrability on preference-consistent information evaluation and decision quality in group decision making
+  venue: Basic and Applied Social Psychology
+  volume: 33(4), 382–390
+
+- type: article
+  year: 2011
+  authors: Hefner, D., Rothmund, T., Gollwitzer, M., & Klimmt, C.
+  title: 'Implicit measures and media effects research: Challenges and opportunities'
+  venue: Communication Methods and Measures
+  volume: 5(3), 181–202
+
+- type: article
+  year: 2011
+  authors: Gollwitzer, M., & Rothmund, T.
+  title: What exactly are victim-sensitive persons sensitive to?
+  venue: Journal of Research in Personality
+  volume: 45(5), 448–455
+
+- type: article
+  year: 2011
+  authors: Rothmund, T., Gollwitzer, M., & Klimmt, C.
+  title: 'Of virtual victims and victimized virtues: Differential effects of experienced aggression in video games on social cooperation'
+  venue: Personality and Social Psychology Bulletin
+  volume: 37(1), 107–119
+
+- type: other
+  year: 2010
+  authors: Gollwitzer, M., Rothmund, T., & Sjöström, A.
+  title: Psychologische Forschung zur Wirkung gewalthaltiger Videospiele. Ein Überblick
+  venue: In-Mind, 4/2010
+  url: https://www.in-mind.org
+
+- type: chapter
+  year: 2010
+  authors: Rothmund, T., & Klimmt, C.
+  title: 'Fighting and killing in computer games: Results of media impact research and implications for violence prevention'
+  venue: In H. Lange & T. Leffler (Eds.), Learning to fight as an opportunity to prevent violence. Interdisciplinary analyses on the problems of violence and the preventive ways of learning to fight (pp. 77–92). Sports Media
+
+- type: other
+  year: 2010
+  authors: Rothmund, T.
+  title: Suspicious minds – Differential effects of virtual aggression in video games on trust and cooperation
+  venue: Dissertation, Universität Koblenz-Landau
+
+- type: article
+  year: 2009
+  authors: Gollwitzer, M., Rothmund, T., Pfeiffer, A., & Ensenbach, C.
+  title: Why and when justice sensitivity leads to pro- and antisocial behavior
+  venue: Journal of Research in Personality
+  volume: 43(6), 999–1005
+
+- type: article
+  year: 2009
+  authors: Schmitt, M., Baumert, A., Fetchenhauer, D., Gollwitzer, M., Rothmund, T., & Schlösser, T.
+  title: Empfindlichkeit für Ungerechtigkeit
+  venue: Psychologische Rundschau
+  volume: 60(1), 8–22
+
+- type: chapter
+  year: 2009
+  authors: Gollwitzer, M., & Rothmund, T.
+  title: 'When the need to trust results in unethical behavior: The Sensitivity to Mean Intentions (SeMI) model'
+  venue: In D. De Cremer (Ed.), Psychological perspectives on unethical behavior and decision making (pp. 135–152). Information Age
+
+- type: other
+  year: 2008
+  authors: Schmitt, M., Gollwitzer, M., Baumert, A., Gschwendner, T., Hofmann, W., & Rothmund, T.
+  title: 'Traits as situational sensitivities: Psychometric and substantive comments on the TASS model proposed by Marshall and Brown (2006)'
+  venue: Berichte aus der Arbeitsgruppe Verantwortung, Gerechtigkeit, Moral (Nr. 170). Universität Trier
