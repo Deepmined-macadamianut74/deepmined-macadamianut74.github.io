@@ -3,16 +3,14 @@
 {{ $hero := "" }}
 {{ range slice "images/hero.jpg" "images/hero.jpeg" "images/hero.png" "images/hero.webp" }}{{ if and (not $hero) (fileExists (printf "static/%s" .)) }}{{ $hero = . }}{{ end }}{{ end }}
 <section class="intro{{ if $hero }} has-photo{{ end }}"{{ with site.Params.heroBg }} style="--hero-bg: {{ . | safeCSS }}"{{ end }}>
-  {{ with $hero }}<img class="intro-img" src="{{ . | relURL }}" alt="{{ site.Params.name }}">{{ end }}
-  <div class="wrap intro-inner">
-    <div class="intro-text">
-      <p class="intro-role">{{ site.Params.role }}<br><strong>{{ site.Params.affiliation }}</strong></p>
-      <h1 class="intro-name">{{ site.Params.name }}</h1>
-      {{ with .Params.lead }}<p class="intro-lead">{{ . }}</p>{{ end }}
-      <div class="intro-bio">{{ .Content }}</div>
-      <div class="intro-links">{{ partial "social.html" . }}</div>
-    </div>
+  <div class="intro-text">
+    <p class="intro-role">{{ site.Params.role }}<br><strong>{{ site.Params.affiliation }}</strong></p>
+    <h1 class="intro-name">{{ site.Params.name }}</h1>
+    {{ with .Params.lead }}<p class="intro-lead">{{ . }}</p>{{ end }}
+    <div class="intro-bio">{{ .Content }}</div>
+    <div class="intro-links">{{ partial "social.html" . }}</div>
   </div>
+  {{ with $hero }}<img class="intro-img" src="{{ . | relURL }}" alt="{{ site.Params.name }}">{{ end }}
 </section>
 
 {{ with .Params.focus }}
