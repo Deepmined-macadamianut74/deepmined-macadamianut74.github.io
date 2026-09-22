@@ -1,0 +1,7 @@
+{{- $d := . -}}
+{{- if eq site.Language.Lang "de" -}}
+{{- $m := slice "Januar" "Februar" "März" "April" "Mai" "Juni" "Juli" "August" "September" "Oktober" "November" "Dezember" -}}
+{{- printf "%d. %s %d" $d.Day (index $m (sub (int $d.Month) 1)) $d.Year -}}
+{{- else -}}
+{{- $d.Format "2 January 2006" -}}
+{{- end -}}

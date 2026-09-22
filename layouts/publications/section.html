@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+<div class="wrap">
+  {{ with .Content }}<div class="prose intro">{{ . }}</div>{{ end }}
+  {{ $all := site.Data.publications }}
+  <div class="toolbar" data-filter-root>
+    <div class="chips" role="group">
+      <button class="chip is-active" data-filter="all" type="button">{{ i18n "all" }} <span class="count">{{ len $all }}</span></button>
+      {{ range slice "article" "book" "chapter" "other" }}
+        {{ $n := len (where $all "type" .) }}
+        {{ if $n }}<button class="chip" data-filter="{{ . }}" type="button">{{ i18n (printf "type_%s" .) }} <span class="count">{{ $n }}</span></button>{{ end }}
+      {{ end }}
+    </div>
+    <label class="search"><span class="sr-only">{{ i18n "search" }}</span>
+      <input type="search" placeholder="{{ i18n "search" }}" data-search-input>
+    </label>
+  </div>
+  <div class="pub-years" data-filter-list>
+    {{ $years := slice }}
+    {{ range $all }}{{ $years = $years | append .year }}{{ end }}
+    {{ range sort (uniq $years) "value" "desc" }}
+      {{ $y := . }}
+      <section class="year-group" data-year>
+        <h2 class="year-label">{{ $y }}</h2>
+        <ol class="pub-list">
+          {{ range where $all "year" $y }}{{ partial "pub.html" . }}{{ end }}
+        </ol>
+      </section>
+    {{ end }}
+    <p class="no-results muted" hidden>{{ i18n "noResults" }}</p>
+  </div>
+</div>
+{{ end }}

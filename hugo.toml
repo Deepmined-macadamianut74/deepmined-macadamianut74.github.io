@@ -1,0 +1,133 @@
+# ─────────────────────────────────────────────────────────────
+#  Zentrale Einstellungen der Webseite
+#  Die meisten Angaben hier müssen nur einmal angepasst werden.
+# ─────────────────────────────────────────────────────────────
+
+# Adresse der fertigen Seite (nach dem Veröffentlichen anpassen,
+# z. B. "https://tobiasrothmund.de/" oder "https://<nutzername>.github.io/")
+baseURL = "https://tobiasrothmund.github.io/"
+
+defaultContentLanguage = "de"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+enableGitInfo = false
+timeZone = "Europe/Berlin"
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[markup.goldmark.renderer]
+  unsafe = true            # erlaubt bei Bedarf eingebettetes HTML in Beiträgen
+[markup.tableOfContents]
+  startLevel = 2
+  endLevel = 3
+[markup.highlight]
+  noClasses = false
+
+# ── Persönliche Angaben (sprachunabhängig) ───────────────────
+[params]
+  name = "Tobias Rothmund"
+  honorific = "Prof. Dr."
+  email = "tobias.rothmund@uni-jena.de"
+  # Porträtfoto: Datei in static/images/ ablegen und Namen hier eintragen.
+  # Leer lassen = elegante Initialen-Grafik.
+  portrait = ""
+  # Kürzel, das in Publikationslisten hervorgehoben wird
+  highlightAuthor = "Rothmund, T."
+
+  # Profile (leer lassen, um sie auszublenden)
+  [params.links]
+    scholar = "https://scholar.google.de/citations?user=WADUSNEAAAAJ"
+    orcid = ""
+    researchgate = ""
+    linkedin = "https://de.linkedin.com/in/tobias-rothmund-62250015"
+    bluesky = ""
+    mastodon = ""
+    osf = ""
+
+# ── Sprachen ─────────────────────────────────────────────────
+[languages]
+  [languages.de]
+    languageName = "Deutsch"
+    languageCode = "de-DE"
+    contentDir = "content/de"
+    weight = 1
+    title = "Tobias Rothmund"
+    [languages.de.params]
+      role = "Professor für Medien- und Kommunikationspsychologie"
+      affiliation = "Friedrich-Schiller-Universität Jena"
+      description = "Forschung, Publikationen und Blog von Tobias Rothmund – Medien- und Kommunikationspsychologie, Universität Jena."
+    [[languages.de.menus.main]]
+      name = "Forschung"
+      pageRef = "/forschung"
+      weight = 10
+    [[languages.de.menus.main]]
+      name = "Publikationen"
+      pageRef = "/publikationen"
+      weight = 20
+    [[languages.de.menus.main]]
+      name = "Vorträge & Medien"
+      pageRef = "/medien"
+      weight = 30
+    [[languages.de.menus.main]]
+      name = "Blog"
+      pageRef = "/blog"
+      weight = 40
+    [[languages.de.menus.main]]
+      name = "Über mich"
+      pageRef = "/about"
+      weight = 50
+    [[languages.de.menus.footer]]
+      name = "Impressum"
+      pageRef = "/impressum"
+      weight = 10
+    [[languages.de.menus.footer]]
+      name = "Datenschutz"
+      pageRef = "/datenschutz"
+      weight = 20
+
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-GB"
+    contentDir = "content/en"
+    weight = 2
+    title = "Tobias Rothmund"
+    [languages.en.params]
+      role = "Professor of Media and Communication Psychology"
+      affiliation = "Friedrich Schiller University Jena"
+      description = "Research, publications and blog of Tobias Rothmund – media and communication psychology, University of Jena."
+    [[languages.en.menus.main]]
+      name = "Research"
+      pageRef = "/research"
+      weight = 10
+    [[languages.en.menus.main]]
+      name = "Publications"
+      pageRef = "/publications"
+      weight = 20
+    [[languages.en.menus.main]]
+      name = "Talks & Media"
+      pageRef = "/media"
+      weight = 30
+    [[languages.en.menus.main]]
+      name = "Blog"
+      pageRef = "/blog"
+      weight = 40
+    [[languages.en.menus.main]]
+      name = "About"
+      pageRef = "/about"
+      weight = 50
+    [[languages.en.menus.footer]]
+      name = "Legal notice"
+      pageRef = "/legal"
+      weight = 10
+    [[languages.en.menus.footer]]
+      name = "Privacy"
+      pageRef = "/privacy"
+      weight = 20

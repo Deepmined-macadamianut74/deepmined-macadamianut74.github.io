@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
+<title>{{ $title }}</title>
+{{ $desc := or .Description .Summary site.Params.description | plainify | truncate 160 }}
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ site.Params.name }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{ range .AllTranslations }}<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{ end }}
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:type" content="{{ cond .IsPage "article" "website" }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with site.Params.portrait }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+<meta name="twitter:card" content="summary">
+{{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">{{ end }}
+{{ with site.GetPage "/blog" }}{{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }} – Blog">{{ end }}{{ end }}
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="{{ "fonts/InterVariable.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+<script>
+  (function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ if .IsPage }}{{ if eq .Section "blog" }}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ .Title | jsonify }},"datePublished":"{{ .Date.Format "2006-01-02" }}","author":{"@type":"Person","name":{{ site.Params.name | jsonify }}},"inLanguage":"{{ site.Language.Lang }}"}
+</script>
+{{ end }}{{ end }}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":{{ site.Params.name | jsonify }},"jobTitle":{{ site.Params.role | jsonify }},"affiliation":{"@type":"Organization","name":{{ site.Params.affiliation | jsonify }}},"url":{{ site.Home.Permalink | jsonify }}}
+</script>
+{{ end }}

@@ -1,0 +1,5 @@
+<header class="page-head wrap">
+  {{ with .Params.eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ with .Description }}<p class="page-lead">{{ . }}</p>{{ end }}
+</header>

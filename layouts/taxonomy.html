@@ -1,0 +1,6 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+<div class="wrap">
+  <nav class="tag-cloud">{{ range .Data.Terms.ByCount }}<a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span class="count">{{ .Count }}</span></a>{{ end }}</nav>
+</div>
+{{ end }}

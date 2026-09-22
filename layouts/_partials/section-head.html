@@ -1,0 +1,4 @@
+<div class="section-head">
+  <h2 class="section-title">{{ .title }}</h2>
+  {{ with .link }}<a class="more" href="{{ . }}">{{ $.label }} <span aria-hidden="true">→</span></a>{{ end }}
+</div>

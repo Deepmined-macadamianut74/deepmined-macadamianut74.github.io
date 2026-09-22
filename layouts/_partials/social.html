@@ -1,0 +1,10 @@
+<ul class="social">
+  {{ with site.Params.email }}<li><a href="mailto:{{ . }}">E-Mail</a></li>{{ end }}
+  {{ with site.Params.links.scholar }}<li><a href="{{ . }}" rel="me noopener">Google Scholar</a></li>{{ end }}
+  {{ with site.Params.links.orcid }}<li><a href="{{ . }}" rel="me noopener">ORCID</a></li>{{ end }}
+  {{ with site.Params.links.researchgate }}<li><a href="{{ . }}" rel="me noopener">ResearchGate</a></li>{{ end }}
+  {{ with site.Params.links.osf }}<li><a href="{{ . }}" rel="me noopener">OSF</a></li>{{ end }}
+  {{ with site.Params.links.linkedin }}<li><a href="{{ . }}" rel="me noopener">LinkedIn</a></li>{{ end }}
+  {{ with site.Params.links.bluesky }}<li><a href="{{ . }}" rel="me noopener">Bluesky</a></li>{{ end }}
+  {{ with site.Params.links.mastodon }}<li><a href="{{ . }}" rel="me noopener">Mastodon</a></li>{{ end }}
+</ul>

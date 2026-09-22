@@ -1,0 +1,21 @@
+{{- $p := . -}}
+{{- $me := site.Params.highlightAuthor -}}
+{{- $authors := $p.authors | htmlEscape -}}
+{{- with $me }}{{ $authors = replace $authors (htmlEscape .) (printf "<strong>%s</strong>" (htmlEscape .)) }}{{ end -}}
+{{- $cite := printf "%s (%v). %s. %s" $p.authors $p.year $p.title $p.venue -}}
+{{- with $p.volume }}{{ $cite = printf "%s, %s" $cite . }}{{ end -}}
+{{- with $p.pages }}{{ $cite = printf "%s, %s" $cite . }}{{ end -}}
+{{- $cite = printf "%s." $cite -}}
+{{- with $p.doi }}{{ $cite = printf "%s https://doi.org/%s" $cite . }}{{ end -}}
+<li class="pub" data-type="{{ $p.type }}" data-search="{{ lower (printf "%s %s %s %v" $p.authors $p.title $p.venue $p.year) }}">
+  <p class="pub-title">{{ $p.title }}</p>
+  <p class="pub-authors">{{ $authors | safeHTML }}</p>
+  <p class="pub-venue"><em>{{ $p.venue }}</em>{{ with $p.volume }}, {{ . }}{{ end }}{{ with $p.pages }}, {{ . }}{{ end }}</p>
+  <div class="pub-actions">
+    {{ with $p.doi }}<a class="chip-link" href="https://doi.org/{{ . }}" rel="noopener">DOI</a>{{ end }}
+    {{ with $p.url }}<a class="chip-link" href="{{ . }}" rel="noopener">Link</a>{{ end }}
+    {{ with $p.pdf }}<a class="chip-link" href="{{ . | relURL }}">PDF</a>{{ end }}
+    <button class="chip-link cite-btn" type="button" data-cite="{{ $cite }}" data-done="{{ i18n "copied" }}">{{ i18n "cite" }}</button>
+    {{ if $p.openaccess }}<span class="badge badge-oa">{{ i18n "openAccess" }}</span>{{ end }}
+  </div>
+</li>

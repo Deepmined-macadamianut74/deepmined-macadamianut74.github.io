@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+<div class="wrap">
+  {{ with .Content }}<div class="prose intro">{{ . }}</div>{{ end }}
+  {{ $all := site.Data.talks }}
+  <div class="toolbar" data-filter-root>
+    <div class="chips" role="group">
+      <button class="chip is-active" data-filter="all" type="button">{{ i18n "all" }} <span class="count">{{ len $all }}</span></button>
+      {{ range slice "keynote" "talk" "interview" "podcast" "tv" "press" }}
+        {{ $n := len (where $all "type" .) }}
+        {{ if $n }}<button class="chip" data-filter="{{ . }}" type="button">{{ i18n (printf "type_%s" .) }} <span class="count">{{ $n }}</span></button>{{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div data-filter-list>
+    <ol class="talk-list">
+      {{ range sort $all "date" "desc" }}{{ partial "talk.html" . }}{{ end }}
+    </ol>
+    <p class="no-results muted" hidden>{{ i18n "noResults" }}</p>
+  </div>
+</div>
+{{ end }}

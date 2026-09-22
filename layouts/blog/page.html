@@ -1,0 +1,30 @@
+{{ define "main" }}
+<article class="post">
+  <header class="post-head wrap narrow">
+    <a class="back" href="{{ (site.GetPage "/blog").RelPermalink }}">← {{ i18n "backToBlog" }}</a>
+    <h1 class="post-h1">{{ .Title }}</h1>
+    {{ with .Params.summary }}<p class="page-lead">{{ . }}</p>{{ end }}
+    <p class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "date.html" .Date }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ i18n "readingTime" .ReadingTime }}</span>
+      {{ range .GetTerms "tags" }}<a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+    </p>
+  </header>
+  <div class="post-body wrap {{ if and .Params.toc (gt (len .TableOfContents) 40) }}has-toc{{ else }}narrow{{ end }}">
+    {{ if and .Params.toc (gt (len .TableOfContents) 40) }}
+    <aside class="toc">
+      <p class="toc-title">{{ i18n "contents" }}</p>
+      {{ .TableOfContents }}
+    </aside>
+    {{ end }}
+    <div class="prose">{{ .Content }}</div>
+  </div>
+  <footer class="wrap narrow post-foot">
+    <nav class="prevnext">
+      {{ with .PrevInSection }}<a class="pn pn-prev" href="{{ .RelPermalink }}"><span class="muted small">{{ i18n "prev" }}</span><span>{{ .Title }}</span></a>{{ else }}<span></span>{{ end }}
+      {{ with .NextInSection }}<a class="pn pn-next" href="{{ .RelPermalink }}"><span class="muted small">{{ i18n "next" }}</span><span>{{ .Title }}</span></a>{{ end }}
+    </nav>
+  </footer>
+</article>
+{{ end }}

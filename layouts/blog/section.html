@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+<div class="wrap">
+  {{ with site.Taxonomies.tags }}
+  <nav class="tag-cloud" aria-label="{{ i18n "tags" }}">
+    {{ range .ByCount }}<a class="tag" href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <span class="count">{{ .Count }}</span></a>{{ end }}
+  </nav>
+  {{ end }}
+  {{ range .Pages.GroupByDate "2006" }}
+  <section class="year-group">
+    <h2 class="year-label">{{ .Key }}</h2>
+    <ul class="post-list">{{ range .Pages }}{{ partial "post-item.html" . }}{{ end }}</ul>
+  </section>
+  {{ end }}
+</div>
+{{ end }}

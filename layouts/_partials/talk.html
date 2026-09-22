@@ -1,0 +1,14 @@
+{{- $t := . -}}
+{{- $d := time.AsTime $t.date -}}
+{{- $future := gt $d now -}}
+<li class="talk{{ if $future }} is-upcoming{{ end }}" data-type="{{ $t.type }}">
+  <time class="talk-date" datetime="{{ $d.Format "2006-01-02" }}">
+    <span class="talk-day">{{ $d.Format "02.01." }}</span>
+    <span class="talk-year">{{ $d.Year }}</span>
+  </time>
+  <div class="talk-body">
+    <p class="talk-kind"><span class="badge badge-{{ $t.type }}">{{ i18n (printf "type_%s" $t.type) }}</span>{{ if $future }}<span class="badge badge-soon">{{ cond (eq site.Language.Lang "de") "demnächst" "upcoming" }}</span>{{ end }}{{ with $t.lang }}{{ if ne . site.Language.Lang }}<span class="badge badge-lang">{{ upper . }}</span>{{ end }}{{ end }}</p>
+    <p class="talk-title">{{ with $t.url }}<a href="{{ . }}" rel="noopener">{{ $t.title }}</a>{{ else }}{{ $t.title }}{{ end }}</p>
+    <p class="talk-venue muted">{{ $t.venue }}{{ with $t.place }} · {{ . }}{{ end }}</p>
+  </div>
+</li>

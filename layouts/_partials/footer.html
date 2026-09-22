@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-id">
+      <p class="footer-name">{{ site.Params.honorific }} {{ site.Params.name }}</p>
+      <p class="muted">{{ site.Params.role }}<br>{{ site.Params.affiliation }}</p>
+    </div>
+    <div class="footer-links">
+      {{ partial "social.html" . }}
+    </div>
+    <div class="footer-meta">
+      <ul class="footer-nav">
+        {{ range site.Menus.footer }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+        {{ with site.GetPage "/blog" }}{{ with .OutputFormats.Get "rss" }}<li><a href="{{ .RelPermalink }}">{{ i18n "rss" }}</a></li>{{ end }}{{ end }}
+      </ul>
+      <p class="muted small">© {{ now.Year }} {{ site.Params.name }}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,44 @@
+# ─────────────────────────────────────────────────────────────
+#  VORTRÄGE, INTERVIEWS & MEDIENAUFTRITTE
+#  type: talk | keynote | interview | podcast | tv | press
+#  date: JJJJ-MM-TT  (zukünftige Termine werden als "demnächst" markiert)
+#  lang: de | en  (Sprache des Beitrags; wird als kleines Kürzel angezeigt)
+#
+#  HINWEIS: Die folgenden Einträge sind PLATZHALTER.
+# ─────────────────────────────────────────────────────────────
+
+- type: keynote
+  date: 2026-11-12
+  title: "[Beispiel] Keynote zu Vertrauen und Polarisierung"
+  venue: "Beispielkonferenz 2026"
+  place: "Berlin"
+  lang: de
+  url: "https://example.org"
+
+- type: podcast
+  date: 2026-06-03
+  title: "[Beispiel] Gespräch über Verschwörungsdenken"
+  venue: "Beispiel-Podcast"
+  lang: de
+  url: "https://example.org"
+
+- type: interview
+  date: 2026-03-18
+  title: "[Beispiel] Interview zur Wirkung von Social Media"
+  venue: "Beispielzeitung"
+  lang: de
+  url: "https://example.org"
+
+- type: talk
+  date: 2025-10-09
+  title: "[Example] Invited talk on misinformation and political attitudes"
+  venue: "Example University"
+  place: "Amsterdam"
+  lang: en
+
+- type: tv
+  date: 2025-05-21
+  title: "[Beispiel] Expertenstatement in einer TV-Dokumentation"
+  venue: "Beispielsender"
+  lang: de
+  url: "https://example.org"

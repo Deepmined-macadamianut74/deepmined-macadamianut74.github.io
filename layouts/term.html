@@ -1,0 +1,10 @@
+{{ define "main" }}
+<header class="page-head wrap">
+  <p class="eyebrow">{{ i18n "taggedWith" }}</p>
+  <h1 class="page-title">{{ .Title }}</h1>
+</header>
+<div class="wrap">
+  <ul class="post-list">{{ range .Pages }}{{ partial "post-item.html" . }}{{ end }}</ul>
+  <p><a class="more" href="{{ (site.GetPage "/blog").RelPermalink }}">← {{ i18n "allPosts" }}</a></p>
+</div>
+{{ end }}

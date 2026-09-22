@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="wrap about">
+  <div class="about-figure">
+    {{ with site.Params.portrait }}
+      <img class="portrait" src="{{ . | relURL }}" alt="{{ site.Params.name }}">
+    {{ else }}
+      <div class="portrait portrait-mono" aria-hidden="true"><span>{{ range split site.Params.name " " }}{{ substr . 0 1 }}{{ end }}</span></div>
+    {{ end }}
+    <div class="about-links">{{ partial "social.html" . }}</div>
+  </div>
+  <div>
+    <header class="page-head flush">
+      <h1 class="page-title">{{ .Title }}</h1>
+      <p class="page-lead">{{ site.Params.honorific }} {{ site.Params.name }} · {{ site.Params.role }}</p>
+    </header>
+    <div class="prose">{{ .Content }}</div>
+  </div>
+</div>
+{{ end }}

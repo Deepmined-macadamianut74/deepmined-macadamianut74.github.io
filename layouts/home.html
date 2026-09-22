@@ -1,0 +1,60 @@
+{{ define "main" }}
+<section class="hero wrap">
+  <div class="hero-text">
+    <p class="eyebrow">{{ site.Params.role }}<br>{{ site.Params.affiliation }}</p>
+    <h1 class="hero-lead">{{ .Params.lead }}</h1>
+    <div class="hero-links">{{ partial "social.html" . }}</div>
+  </div>
+  <div class="hero-figure">
+    {{ with site.Params.portrait }}
+      <img class="portrait" src="{{ . | relURL }}" alt="{{ site.Params.name }}" width="560" height="700">
+    {{ else }}
+      <div class="portrait portrait-mono" aria-hidden="true">
+        {{ $parts := split site.Params.name " " }}
+        <span>{{ range $parts }}{{ substr . 0 1 }}{{ end }}</span>
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+{{ with .Params.focus }}
+<section class="wrap block">
+  {{ $r := site.GetPage (cond (eq site.Language.Lang "de") "/forschung" "/research") }}
+  {{ partial "section-head.html" (dict "title" (i18n "researchFocus") "link" $r.RelPermalink "label" (i18n "allProjects")) }}
+  <ol class="focus-grid">
+    {{ range $i, $f := . }}
+    <li class="focus-card">
+      <span class="focus-num">{{ printf "%02d" (add $i 1) }}</span>
+      <h3>{{ $f.title }}</h3>
+      <p>{{ $f.text }}</p>
+    </li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}
+
+<section class="wrap block split">
+  <div>
+    {{ $blog := site.GetPage "/blog" }}
+    {{ partial "section-head.html" (dict "title" (i18n "latestPosts") "link" $blog.RelPermalink "label" (i18n "allPosts")) }}
+    <ul class="post-list compact">
+      {{ range first 3 (where site.RegularPages "Section" "blog") }}{{ partial "post-item.html" . }}{{ end }}
+    </ul>
+  </div>
+  <div>
+    {{ $pubs := site.GetPage (cond (eq site.Language.Lang "de") "/publikationen" "/publications") }}
+    {{ partial "section-head.html" (dict "title" (i18n "selectedPubs") "link" $pubs.RelPermalink "label" (i18n "allPubs")) }}
+    <ol class="pub-list compact">
+      {{ range first 3 (sort (where site.Data.publications "selected" true) "year" "desc") }}{{ partial "pub.html" . }}{{ end }}
+    </ol>
+  </div>
+</section>
+
+<section class="wrap block">
+  {{ $m := site.GetPage (cond (eq site.Language.Lang "de") "/medien" "/media") }}
+  {{ partial "section-head.html" (dict "title" (i18n "upcoming") "link" $m.RelPermalink "label" (i18n "allTalks")) }}
+  <ol class="talk-list">
+    {{ range first 3 (sort site.Data.talks "date" "desc") }}{{ partial "talk.html" . }}{{ end }}
+  </ol>
+</section>
+{{ end }}
