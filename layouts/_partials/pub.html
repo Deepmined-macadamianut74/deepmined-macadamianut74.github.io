@@ -10,7 +10,7 @@
 <li class="pub" data-type="{{ $p.type }}" data-search="{{ lower (printf "%s %s %s %v" $p.authors $p.title $p.venue $p.year) }}">
   <p class="pub-title">{{ $p.title }}</p>
   <p class="pub-authors">{{ $authors | safeHTML }}</p>
-  <p class="pub-venue"><em>{{ $p.venue }}</em>{{ with $p.volume }}, {{ . }}{{ end }}{{ with $p.pages }}, {{ . }}{{ end }}</p>
+  <p class="pub-venue">{{ if eq $p.type "article" }}<em>{{ $p.venue }}</em>{{ else }}{{ $p.venue }}{{ end }}{{ with $p.volume }}, {{ . }}{{ end }}{{ with $p.pages }}, {{ . }}{{ end }}</p>
   <div class="pub-actions">
     {{ with $p.doi }}<a class="chip-link" href="https://doi.org/{{ . }}" rel="noopener">DOI</a>{{ end }}
     {{ with $p.url }}<a class="chip-link" href="{{ . }}" rel="noopener">Link</a>{{ end }}
