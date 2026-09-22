@@ -397,37 +397,38 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media print { .site-header, .site-footer, .toc, .prevnext, .toolbar { display: none; } body { background: #fff; color: #000; } }
 [data-filter-list] .talk-list { border-top: 0; }
 
-/* ── Startseite: großes Foto + Vorstellung ───────────────────
-   Foto: Datei "static/images/hero.jpg" hochladen (Querformat,
-   mind. 2000 px breit). Bildausschnitt in hugo.toml mit
-   heroFocus = "65% 30%" steuern (waagrecht, senkrecht). */
-.hero-photo {
-  position: relative; overflow: hidden; color: #fff;
-  height: clamp(26rem, 72vh, 46rem); background: #0d0f14;
-  display: flex; align-items: flex-end;
-}
-.hero-photo.is-empty {
+/* ── Startseite: Vorstellung mit Foto ───────────────────────
+   Foto als "static/images/hero.jpg" (oder .webp/.png) ablegen.
+   Hintergrundfarbe neben dem Foto: in hugo.toml heroBg = "#0b1013" */
+.intro { position: relative; overflow: hidden; background: var(--hero-bg, #0b1013); color: #f3f4f6; }
+.intro:not(.has-photo) {
   background:
-    radial-gradient(70% 90% at 85% 20%, color-mix(in srgb, var(--accent) 55%, transparent), transparent 70%),
-    radial-gradient(50% 60% at 10% 100%, rgb(255 255 255 / .06), transparent 70%),
-    #0d0f14;
+    radial-gradient(60% 90% at 90% 10%, color-mix(in srgb, var(--accent) 50%, transparent), transparent 70%),
+    var(--hero-bg, #0b1013);
 }
-.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(0 0 0 / .62) 0%, rgb(0 0 0 / .25) 45%, transparent 70%), linear-gradient(0deg, rgb(0 0 0 / .55) 0%, transparent 45%); }
-.hero-photo.is-empty .hero-shade { display: none; }
-.hero-caption { position: relative; padding-bottom: clamp(2rem, 5vw, 3.5rem); }
-.hero-name { font-size: clamp(2.5rem, 1.5rem + 5vw, 5.5rem); font-weight: 640; letter-spacing: -0.045em; line-height: 0.98; margin-bottom: 1.25rem; }
-.hero-role { font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.2rem); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 400; opacity: .9; max-width: 32em; }
-.hero-aff { font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.2rem); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 650; margin-top: 0.25rem; }
-
-.rule-head { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; }
-.rule-head .rule { height: 1px; background: var(--ink); }
-.rule-head h2 { font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem); font-weight: 400; letter-spacing: -0.02em; text-transform: uppercase; }
-.bio-body { max-width: 52rem; }
-.bio-lead { font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem); line-height: 1.4; letter-spacing: -0.015em; font-weight: 500; margin-bottom: 1.5rem; text-wrap: pretty; }
-.bio-text { font-size: 1.125rem; line-height: 1.7; color: var(--ink-2); }
-.bio-text > * + * { margin-top: 1.1em; }
-.bio-text a { color: var(--accent); }
-.bio-text strong { color: var(--ink); font-weight: 600; }
-.bio-links { margin-top: 2rem; }
-@media (max-width: 640px) { .hero-photo { height: clamp(24rem, 80vh, 34rem); } .hero-img { object-position: 70% 30% !important; } }
+.intro-img {
+  position: absolute; top: 0; right: 0; height: 100%; width: 48%; object-fit: cover; object-position: 50% 15%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%); mask-image: linear-gradient(90deg, transparent 0%, #000 30%);
+}
+.intro-inner { position: relative; padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.intro-text { max-width: min(38rem, 50%); }
+.intro:not(.has-photo) .intro-text { max-width: 44rem; }
+.intro-role { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgb(255 255 255 / .7); line-height: 1.6; margin-bottom: 1.25rem; }
+.intro-role strong { color: #fff; font-weight: 650; }
+.intro-name { font-size: clamp(2.5rem, 1.4rem + 4.2vw, 4.75rem); font-weight: 640; letter-spacing: -0.045em; line-height: 0.98; color: #fff; }
+.intro-lead { margin-top: 1.75rem; font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem); line-height: 1.4; letter-spacing: -0.015em; font-weight: 500; color: #fff; text-wrap: pretty; }
+.intro-bio { margin-top: 1.25rem; font-size: 1.0625rem; line-height: 1.7; color: rgb(255 255 255 / .75); }
+.intro-bio > * + * { margin-top: 1em; }
+.intro-bio strong { color: #fff; font-weight: 600; }
+.intro-bio a { color: #fff; }
+.intro-links { margin-top: 2rem; }
+.intro .social a { color: rgb(255 255 255 / .85); border-color: rgb(255 255 255 / .3); }
+.intro .social a:hover { color: #fff; border-color: #fff; }
+.intro .social li:first-child a { background: #fff; color: #0b1013; border-color: #fff; }
+.intro .social li:first-child a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (max-width: 880px) {
+  .intro-img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 1 / 1.05; object-position: 50% 8%;
+    -webkit-mask-image: linear-gradient(0deg, transparent 0%, #000 35%); mask-image: linear-gradient(0deg, transparent 0%, #000 35%); }
+  .intro.has-photo .intro-inner { margin-top: -2.5rem; padding-top: 0; }
+  .intro-text, .intro:not(.has-photo) .intro-text { max-width: none; }
+}
